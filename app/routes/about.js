@@ -3,7 +3,7 @@ import Route from '@ember/routing/route';
 let bookmarks = [{
   id: 1,
   title: 'Microsoft',
-  link: 'https://wwww.microsoft.com/',
+  link: 'https://www.microsoft.com/',
   about: 'At Microsoft our mission and values are to help people and business throughout the world realize their full potential.'
 },
 {
