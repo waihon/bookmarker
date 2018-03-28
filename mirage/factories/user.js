@@ -9,6 +9,7 @@ export default Factory.extend({
   isAdmin() { return faker.random.boolean(0, 1); },
   created() { return faker.date.past(); },
   afterCreate(user, server) {
-    server.createList('bookmark', faker.random.number({ min: 1, max: 5 }), { user });
+    // Simulate some users don't have any bookmark.
+    server.createList('bookmark', faker.random.number({ min: 0, max: 5 }), { user });
   }
 });
