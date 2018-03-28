@@ -11,5 +11,6 @@ export default DS.Model.extend({
   }),
   created: DS.attr('date', {
     defaultValue() { return new Date(); }
-  })
+  }),
+  bookmarks: DS.hasMany('bookmark')
 });

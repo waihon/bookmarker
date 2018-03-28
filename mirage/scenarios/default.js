@@ -7,5 +7,6 @@ export default function(server) {
 
   // server.createList('post', 10);
   server.createList('user', 10);
-  server.createList('bookmark', 20);
+  // Bookmark will be created after creating a user (mirage/factories/user.js)
+  //server.createList('bookmark', 20);
 }
