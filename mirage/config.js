@@ -37,4 +37,27 @@ export default function() {
   this.put('bookmarks/:id');
   this.patch('bookmarks/:id');
   this.del('bookmarks/:id');
+
+  this.get('users', function(db, request) {
+    let users = [];
+
+    if (Object.keys(request.queryParams).length === 0) {
+      users = db.users.all();
+    } else {
+      let filterByIsAdmin = request.queryParams['isAdmin'];
+      users = db.users.where({ isAdmin: filterByIsAdmin });
+    }
+    return users;
+  });
+
+  this.get('bookmarks', function(db, request) {
+    let bookmarks = [];
+
+    if (Object.keys(request.queryParams).length === 0) {
+      bookmarks = db.bookmarks.all();
+    } else {
+      bookmarks = db.bookmarks.where({ about: null, id: 3 });
+    }
+    return bookmarks;
+  });
 }
