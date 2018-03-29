@@ -1,4 +1,10 @@
 import Component from '@ember/component';
 
-export default Component.extend({
+const UsersListComponent = Component.extend({
+  imgClass: "avatar"
 });
+
+UsersListComponent.reopenClass({
+  positionalParams: ['avatarUrl', 'email']
+});
+export default UsersListComponent;
